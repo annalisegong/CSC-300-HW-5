@@ -8,11 +8,14 @@ public class Main
 		String text = "In the beginning God created the heavens and the earth.";
 		String key = "the";
 		int count = occurCount(text, key);
-		
-		System.out.println("'" + key + "' appears " + count + " times");
+		key = "begin";
+		count = occurCount(text, key);
+		key = "recreate";
+		count = occurCount(text, key);
+
 	}
 	
-	public static String removeSpace(String input)
+	public static String replaceWithSpace(String input)
 	{
 		String result = "";
 		String legalChar = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -44,7 +47,7 @@ public class Main
 	{
 		int result = 0;
 		//remove special characters
-		String text1 = removeSpace(text);
+		String text1 = replaceWithSpace(text);
 		//split with spaces
 		String [] array = text1.split(" ");
 		//count occurrences of key
@@ -55,6 +58,7 @@ public class Main
 				result++;
 			}
 		}
+		System.out.println("'" + key + "' appears " + result + " times");
 		return result;
 	}
 }
